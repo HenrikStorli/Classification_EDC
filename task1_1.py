@@ -65,7 +65,7 @@ def sigm(z_ik):
 # Oppgave 1 (b)
 
 def discriminant_vector(w_matrix, x_vec):
-    z_k = w_matrix*x_vec
+    z_k = w_matrix.dot(x_vec)
     g_k = sigm(z_k)
     return g_k
 
