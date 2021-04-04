@@ -35,15 +35,15 @@ W_init = np.zeros((C,D)) # Initialiserer CxD- matrise med bare 0
 # Oppgave 1 (a)
 def split():
     training = np.array(
-        setosa[0:training_1b,:],
+        [setosa[0:training_1b,:],
          versicolor[0:training_1b,:],
-         virginica[0:training_1b,:]
+         virginica[0:training_1b,:]]
     )
 
     test = np.array(
-        setosa[-test_1b:-1,:],
-         versicolor[-test_1b:-1,:],
-         virginica[-test_1b:-1,:]
+        [setosa[-test_1b-1:0,:],
+         versicolor[-test_1b-1:0,:],
+         virginica[-test_1b-1:0,:]]
     )
 
     return training, test
@@ -81,9 +81,10 @@ def grad_MSE(g, t, x):
 count = 0
 W_curr = W_init
 while count < 10:  # Kun for test, må ha flere enn 10 iterasjoner
+    t_k = 
     g_k = discriminant_vector(W_prev, training)
     gradient = grad_MSE(g_k, )
-    W_curr -= alpha*grad_MSE()
+    W_curr -= alpha*gradient
     print(W_curr)
 
 
