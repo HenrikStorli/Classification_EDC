@@ -17,7 +17,7 @@ C = 3       # Antall klasser
 D = 5       # Antall features + 1, se figur i kompendium
 training_1b = 30    # Antall training
 test_1b = 20        # Antall test
-alpha = 0.2           # Prøv ut flere alphaer
+alpha = 0.002           # Prøv ut flere alphaer
 
 labels = ['setosa', 'versicolor', 'virginica']
 # Side 13 i kompendie
@@ -31,6 +31,10 @@ classes = np.matrix('1 0 0; 0 1 0; 0 0 1')
 
 
 W_init = np.ones((C,D)) # Initialiserer CxD- matrise med bare 0
+#W_init[0][0] = 3
+#W_init[1][1] = 0.2
+#W_init[2][2] = 7
+
 
 
 #print(setosa)
@@ -59,13 +63,11 @@ def split():
 print("Training: ", split()[0])
 print("Test: ", split()[1])
 
-
-def sigm(z_ik):
-    """
-    :param z: Wx_k ( = g_k)
-    :return: sigmoid av vektorelement nr i
-    """
-    return 1/(1 + np.exp(-z_ik))
+def sigmoid(value):
+    if -value > np.log(np.finfo(type(value)).max):
+        return 0.0
+    a = np.exp(-value)
+    return 1.0/ (1.0 + a)
 
 
 # Oppgave 1 (b)
@@ -82,11 +84,12 @@ def discriminant_vector(w_matrix, x_vec):
     # np.append(x_vec, 1.0)
     z_k = w_matrix.dot(np.transpose(x_vec))
 
-    g_0k = sigm(z_k[0])
-    g_1k = sigm(z_k[1])
-    g_2k = sigm(z_k[2])
+    g_0k = sigmoid(z_k[0])
+    g_1k = sigmoid(z_k[1])
+    g_2k = sigmoid(z_k[2])
 
-    g_k = np.array([g_0k, g_1k , g_2k])
+    g_k = np.matrix([g_0k, g_1k, g_2k])
+    a = 1
     return g_k
 
 def grad_MSE(g, t, x):
@@ -101,34 +104,43 @@ def grad_MSE(g, t, x):
     return np.sum([np.multiply((g-t), g, (1-g))]*np.transpose(x)) # np.multiply: elementwise multiplikasjon
 
 
-count = 0
+
 W_curr = W_init
 training, test = split()
-
-
-num_testing_set, num_cols_testing = training.shape
 targer_matrix = init_target_matrix()
-
-g_k = 0
-while count < 150:  # Kun for test, må ha flere enn 10 iterasjoner
+num_testing_set, num_cols_testing = training.shape
+count = 0
+while count < 100:  # Kun for test, må ha flere enn 10 iterasjoner
+    #print("W:\t", W_curr)
     mse_value = 0
     mse_grad = np.zeros((C,D))
     for k in range(num_testing_set):
         g_k = discriminant_vector(W_curr, training[k,:])
-        g_k = np.asmatrix(g_k)
         g_k = g_k.transpose()
         t_k = np.asmatrix(targer_matrix[:,k])
         t_k = t_k.transpose()
         x_k = np.asmatrix(training[k,:])
         x_k = x_k.transpose()
-        mse_grad += np.multiply((g_k-t_k), g_k, (np.ones((3,1)) - g_k)).dot(x_k.transpose())
 
+        mse_grad += np.multiply((g_k-t_k), g_k, (np.ones((3,1)) - g_k)).dot(x_k.transpose())
         mse_value += 0.5 * (g_k - t_k).transpose() * (g_k - t_k)
 
     W_curr -= alpha*mse_grad
     # Oppdater t_k
-    print("W:\t", W_curr)
-    print("MSE = \t", mse_value, "\n")
+    if count % 100 == 0:
+        print("MSE = \t", mse_value, "\n")
+
+    count += 1
+
+# Calculate value of g
+g = np.zeros((C,num_testing_set))
+g = np.asmatrix(g)
+for k in range(num_testing_set):
+    gk = np.asmatrix(discriminant_vector(W_curr, training[k,:])).transpose()
+    print("g:", gk, "\n")
+    g[:,k] = gk
+
+#print("g:", gk,"\n")
 
 
 
