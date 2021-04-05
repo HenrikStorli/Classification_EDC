@@ -5,11 +5,11 @@ import sys, os
 from pathlib import Path
 
 #Feature vektorer
-setosa = np.loadtxt("C:\\Users\\Lokal\\Documents\\ELSYS\\3V\\EDK\\prosjekt\\Classification1-10\\class_iris\\Iris_TTT4275\\class_1", dtype='float_', delimiter=',')
-versicolor = np.loadtxt("C:\\Users\\Lokal\\Documents\\ELSYS\\3V\\EDK\\prosjekt\\Classification1-10\\class_iris\\Iris_TTT4275\\class_2", dtype='float_', delimiter=',')
-virginica = np.loadtxt("C:\\Users\\Lokal\\Documents\\ELSYS\\3V\\EDK\\prosjekt\\Classification1-10\\class_iris\\Iris_TTT4275\\class_3", dtype='float_', delimiter=',')
+setosa = np.loadtxt("class_1", dtype='float_', delimiter=',')
+versicolor = np.loadtxt("class_2", dtype='float_', delimiter=',')
+virginica = np.loadtxt("class_3", dtype='float_', delimiter=',')
 
-labeled_set = np.loadtxt("C:\\Users\\Lokal\\Documents\\ELSYS\\3V\\EDK\\prosjekt\\Classification1-10\\class_iris\\Iris_TTT4275\\iris.data", dtype='S', delimiter=',')
+labeled_set = np.loadtxt("iris.data", dtype='S', delimiter=',')
 labeled_set[:,0:3] = labeled_set[:,0:3].astype('float_')
 
 
@@ -17,17 +17,20 @@ C = 3       # Antall klasser
 D = 5       # Antall features + 1, se figur i kompendium
 training_1b = 30    # Antall training
 test_1b = 20        # Antall test
-alpha = 1           # Prøv ut flere alphaer
+alpha = 0.2           # Prøv ut flere alphaer
 
 labels = ['setosa', 'versicolor', 'virginica']
 # Side 13 i kompendie
-classes = np.array(
-    [[1, 0, 0],  # setosa
-    [0, 1, 0],  # versicolor
-    [0, 0, 1]]  # virginica
-)
+classes = np.matrix('1 0 0; 0 1 0; 0 0 1')
+    #[1, 0, 0]  # setosa
+    #[0, 1, 0],  # versicolor
+    #[0, 0, 1]  # virginica
 
-W_init = np.zeros((C,D)) # Initialiserer CxD- matrise med bare 0
+
+
+
+
+W_init = np.ones((C,D)) # Initialiserer CxD- matrise med bare 0
 
 
 #print(setosa)
@@ -67,10 +70,23 @@ def sigm(z_ik):
 
 # Oppgave 1 (b)
 
+def init_target_matrix():
+    T = np.zeros((C,training_1b*C))
+    for row in range(C):
+        for column in range(training_1b):
+            T[row][column + row*training_1b] = 1
+    return T
+
+
 def discriminant_vector(w_matrix, x_vec):
-    np.append(x_vec, 1.0)
+    # np.append(x_vec, 1.0)
     z_k = w_matrix.dot(np.transpose(x_vec))
-    g_k = sigm(z_k)
+
+    g_0k = sigm(z_k[0])
+    g_1k = sigm(z_k[1])
+    g_2k = sigm(z_k[2])
+
+    g_k = np.array([g_0k, g_1k , g_2k])
     return g_k
 
 def grad_MSE(g, t, x):
@@ -88,19 +104,32 @@ def grad_MSE(g, t, x):
 count = 0
 W_curr = W_init
 training, test = split()
-t_k = classes[0]    # start på setosa,
+
+
+num_testing_set, num_cols_testing = training.shape
+targer_matrix = init_target_matrix()
+
+g_k = 0
 while count < 150:  # Kun for test, må ha flere enn 10 iterasjoner
-    g_k = 0
-    for i in range(training.size):
-        g_k = discriminant_vector(W_curr, training[i:,])
-    gradient = grad_MSE(g_k, t_k, training)
-    W_curr -= alpha*gradient
+    mse_value = 0
+    mse_grad = np.zeros((C,D))
+    for k in range(num_testing_set):
+        g_k = discriminant_vector(W_curr, training[k,:])
+        g_k = np.asmatrix(g_k)
+        g_k = g_k.transpose()
+        t_k = np.asmatrix(targer_matrix[:,k])
+        t_k = t_k.transpose()
+        x_k = np.asmatrix(training[k,:])
+        x_k = x_k.transpose()
+        mse_grad += np.multiply((g_k-t_k), g_k, (np.ones((3,1)) - g_k)).dot(x_k.transpose())
+
+        mse_value += 0.5 * (g_k - t_k).transpose() * (g_k - t_k)
+
+    W_curr -= alpha*mse_grad
     # Oppdater t_k
-    if count > 50:
-        t_k = classes[1]        # versicolor
-        if count > 100:
-            t_k = classes[2]        # virginica
     print("W:\t", W_curr)
+    print("MSE = \t", mse_value, "\n")
+
 
 
 
