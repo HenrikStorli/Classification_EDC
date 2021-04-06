@@ -131,16 +131,15 @@ def find_error_rate(W_matrix, t_matrix):
     err_num: antall forskjeller
     error_rate:
     """
-    print("W_matrix[0]:", W_matrix[0].size)
-    print("W_matrix[:,0]", W_matrix[:,0].size)
-    print("W_matrix[0,:]", W_matrix[0,:].shape)
-    rounded_W = np.array(W_matrix.shape)
-    rounded_t = np.array(t_matrix.shape)
-    for i in range(W_matrix[:,0].size):
-        rounded_W[:,i] = pred_to_class(W_matrix[:,i])  # Runder av til nærmeste klasse
-        rounded_t[:,i] = pred_to_class(t_matrix[:,i])
-        print("rounded_W: rounded_W")
+    rounded_W = np.empty(W_matrix.shape)
+    rounded_t = np.empty(W_matrix.shape)
 
+    for i in range(W_matrix[0].size):  # W_matrix[0].size = 90
+        rounded_W[i] = np.reshape(pred_to_class(W_matrix[i]),3)  # Runder av til nærmeste klasse
+        rounded_t[i] = np.reshape(pred_to_class(t_matrix[i]),3)
+        print("rounded_W[i]: ", rounded_W[i])
+        #  Gir indexerror
+    print("rounded_W:", rounded_W)
     errs = np.absolute(np.subtract(rounded_W, rounded_t))  # Elementwise forskjell W og t
     err_num = np.count_nonzero(errs)
     error_rate = err_num/W_matrix.size
