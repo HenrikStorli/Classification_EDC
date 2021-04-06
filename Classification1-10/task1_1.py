@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 import math
 import scipy.signal as sgn
 import sys, os
@@ -104,13 +105,56 @@ def grad_MSE(g, t, x):
     return np.sum([np.multiply((g-t), g, (1-g))]*np.transpose(x)) # np.multiply: elementwise multiplikasjon
 
 
+def pred_to_class(pred):
+
+    """
+    "Runder av" vektor til nærmeste klasse
+    """
+
+    max_arg = np.argmax(pred)
+    new_pred = np.zeros(pred.shape, dtype=int)
+    new_pred[max_arg] = 1
+
+    return new_pred
+
+#print("pred_to_class test: ", pred_to_class(np.array([0.5, 3, 0.1])))
+#print("pred_to_class test: ", pred_to_class(np.array([1000.0, 1e-3, 10**2])))
+#print("pred_to_class test: ", pred_to_class(np.array([1, 2, 3])))
+
+
+
+def find_error_rate(W_matrix, t_matrix):
+    """
+    Finner antall forskjeller mellom gk og tk
+    ved avrunding.
+    errs: matrise med forskjell mellom W, t
+    err_num: antall forskjeller
+    error_rate:
+    """
+    print("W_matrix[0]:", W_matrix[0].size)
+    print("W_matrix[:,0]", W_matrix[:,0].size)
+    print("W_matrix[0,:]", W_matrix[0,:].shape)
+    rounded_W = np.array(W_matrix.shape)
+    rounded_t = np.array(t_matrix.shape)
+    for i in range(W_matrix[:,0].size):
+        rounded_W[:,i] = pred_to_class(W_matrix[:,i])  # Runder av til nærmeste klasse
+        rounded_t[:,i] = pred_to_class(t_matrix[:,i])
+        print("rounded_W: rounded_W")
+
+    errs = np.absolute(np.subtract(rounded_W, rounded_t))  # Elementwise forskjell W og t
+    err_num = np.count_nonzero(errs)
+    error_rate = err_num/W_matrix.size
+    return errs, err_num, error_rate
 
 W_curr = W_init
 training, test = split()
 targer_matrix = init_target_matrix()
 num_testing_set, num_cols_testing = training.shape
+iters = 5000            # For plotting
+mses = [] # For plotting
+x_axis = np.arange(start=0, stop=iters, step=100)    # For plotting
 count = 0
-while count < 100:  # Kun for test, må ha flere enn 10 iterasjoner
+while count < iters:  # Kun for test, må ha flere enn 10 iterasjoner
     #print("W:\t", W_curr)
     mse_value = 0
     mse_grad = np.zeros((C,D))
@@ -124,12 +168,11 @@ while count < 100:  # Kun for test, må ha flere enn 10 iterasjoner
 
         mse_grad += np.multiply((g_k-t_k), g_k, (np.ones((3,1)) - g_k)).dot(x_k.transpose())
         mse_value += 0.5 * (g_k - t_k).transpose() * (g_k - t_k)
-
     W_curr -= alpha*mse_grad
     # Oppdater t_k
     if count % 100 == 0:
         print("MSE = \t", mse_value, "\n")
-
+        mses.append(mse_value[-1,-1])
     count += 1
 
 # Calculate value of g
@@ -140,11 +183,42 @@ for k in range(num_testing_set):
     print("g:", gk, "\n")
     g[:,k] = gk
 
+print(g)
+
 #print("g:", gk,"\n")
 
+print("MSE: ", mse_value)
+print(mse_value.shape)
+print("iters: ", x_axis)
+print("MSEs for plotting: ", mses)
 
+# Plotter MSE som funksjon av antall iterasjoner
 
-
-
-
+plt.plot(x_axis, mses)
+plt.xlabel("Iterasjoner")
+plt.ylabel("Mean square error")
+plt.show()
 # Oppgave 1c)
+
+error_matrix, error_count, error_rate = find_error_rate(g, targer_matrix)
+print("Errors: ", error_matrix, '\n', error_count, '\n', round(error_rate*100,1), '% \n')
+# Confusion matrix
+
+def create_confusion_matrix(predictions, true_values, c):
+    """
+    Ikke ferdig, gir feil svar
+    Lager confusion matrix
+
+    """
+    confusion = np.zeros((c,c))
+    # Sammenlikn predictions og true values
+    rounded_pred = np.around(predictions)
+    rounded_targets = np.around(true_values)
+    # Lite effektiv for loop
+    for col in range(c):  # c = antall klasser
+        for row in range(rounded_pred[:,col].size):
+            if rounded_pred[row,col] == rounded_targets[row,col]:
+                confusion[col,col] += 1
+    return confusion
+
+print(create_confusion_matrix(g, targer_matrix, 3))
