@@ -92,7 +92,6 @@ def discriminant_vector(w_matrix, x_vec):
 
 def grad_MSE(g, t, x):
     """
-
     :param g: diskriminantfunksjon
     :param t: targets
     :param x: data til trening
