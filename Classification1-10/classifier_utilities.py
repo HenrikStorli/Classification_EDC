@@ -13,6 +13,16 @@ def discriminant_vector(w_matrix, x_vec):
     return g_k
 
 
+def full_g_matrix(W, samples):
+    number_of_samples, single_sample_size = samples.shape
+    g = np.zeros((C, number_of_samples))
+    g = np.asmatrix(g)
+    for k in range(number_of_samples):
+        gk = np.asmatrix(discriminant_vector(W, samples[k, :])).transpose()
+        g[:, k] = gk
+    return g
+
+
 def pred_to_class(pred):
 
     """
