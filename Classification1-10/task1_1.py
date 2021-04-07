@@ -28,9 +28,6 @@ classes = np.matrix('1 0 0; 0 1 0; 0 0 1')
     #[0, 0, 1]  # virginica
 
 
-
-
-
 W_init = np.ones((C,D)) # Initialiserer CxD- matrise med bare 0
 #W_init[0][0] = 3
 #W_init[1][1] = 0.2
@@ -73,14 +70,14 @@ def sigmoid(value):
 
 # Oppgave 1 (b)
 
-def init_target_matrix():
-    T = np.zeros((C,training_1b*C))
+def init_target_matrix(vec):
+    T = np.zeros((C,vec*C))
     for row in range(C):
-        for column in range(training_1b):
-            T[row][column + row*training_1b] = 1
+        for column in range(vec):
+            T[row][column + row*vec] = 1
     return T
 
-
+print(init_target_matrix(training_1b))
 def discriminant_vector(w_matrix, x_vec):
     # np.append(x_vec, 1.0)
     z_k = w_matrix.dot(np.transpose(x_vec))
@@ -109,6 +106,7 @@ def pred_to_class(pred):
 
     """
     "Runder av" vektor til nærmeste klasse
+    Placeholder
     """
     print("pred ", pred, "stop")
     max_arg = np.argmax(pred)
@@ -117,41 +115,32 @@ def pred_to_class(pred):
     print(max_arg)
     return new_pred
 
+def matr_to_classes(matr):
+    """
+    Kjører pred_to_class på hel matrise
+    """
+    rounded_matr = np.empty(matr.shape)
+    for i in range(matr[0].size):  # W_matrix[0].size = 90
+        rounded_matr[:, i] = np.reshape(pred_to_class(matr[:, i]), 3)  # Runder av til nærmeste klasse
+
+    return rounded_matr
+
 #print("pred_to_class test: ", pred_to_class(np.array([0.5, 3, 0.1])))
 #print("pred_to_class test: ", pred_to_class(np.array([1000.0, 1e-3, 10**2])))
 #print("pred_to_class test: ", pred_to_class(np.array([1, 2, 3])))
 
 
 
-def find_error_rate(W_matrix, t_matrix):
-    """
-    Finner antall forskjeller mellom gk og tk
-    ved avrunding.
-    errs: matrise med forskjell mellom W, t
-    err_num: antall forskjeller
-    error_rate:
-    """
-    rounded_W = np.empty(W_matrix.shape)
-    rounded_t = np.empty(t_matrix.shape)
-    print("W_matrix shape: ", W_matrix.shape)
-    for i in range(W_matrix[0].size):  # W_matrix[0].size = 90
-        rounded_W[:,i] = np.reshape(pred_to_class(W_matrix[:,i]),3)  # Runder av til nærmeste klasse
-        rounded_t[:,i] = np.reshape(pred_to_class(t_matrix[:,i]),3)
-        print("rounded_W[:,i]: ", rounded_W[:,i])
-        #  Gir indexerror
-    print("rounded_W:", rounded_W)
-    errs = np.absolute(np.subtract(rounded_W, rounded_t))  # Elementwise forskjell W og t
-    err_num = np.count_nonzero(errs)
-    error_rate = err_num/W_matrix.size
-    return errs, err_num, error_rate
 
 W_curr = W_init
 training, test = split()
-targer_matrix = init_target_matrix()
+targer_matrix = init_target_matrix(training_1b)
 num_testing_set, num_cols_testing = training.shape
+
 iters = 1000            # For plotting
 mses = [] # For plotting
 x_axis = np.arange(start=0, stop=iters, step=100)    # For plotting
+
 count = 0
 while count < iters:  # Kun for test, må ha flere enn 10 iterasjoner
     #print("W:\t", W_curr)
@@ -187,9 +176,8 @@ print(g)
 #print("g:", gk,"\n")
 
 print("MSE: ", mse_value)
-print(mse_value.shape)
-print("iters: ", x_axis)
-print("MSEs for plotting: ", mses)
+#print(mse_value.shape)
+
 
 # Plotter MSE som funksjon av antall iterasjoner
 
@@ -197,26 +185,60 @@ plt.plot(x_axis, mses)
 plt.xlabel("Iterasjoner")
 plt.ylabel("Mean square error")
 plt.show()
+
+
+
 # Oppgave 1c)
+def find_error_rate(g_matrix, t_matrix):
+    """
+    Finner antall forskjeller mellom gk og tk
+    ved avrunding.
+    errs: matrise med forskjell mellom W, t
+    err_num: antall forskjeller
+    error_rate:
+    """
+    rounded_g = matr_to_classes(g_matrix)
+    rounded_t = matr_to_classes(t_matrix)
+    print("rounded_g:", rounded_g)
+    errs = np.absolute(np.subtract(rounded_g[0:rounded_t[;,0].size], rounded_t))  # Elementwise forskjell W og t
+    err_num = np.count_nonzero(errs)
+    error_rate = err_num/g_matrix.size
+    return errs, err_num, error_rate
+
+target_matrix_test = init_target_matrix(test_1b)
+print("Test targets: ", target_matrix_test)
 
 error_matrix, error_count, error_rate = find_error_rate(g, targer_matrix)
-print("Errors: ", error_matrix, '\n', error_count, '\n', round(error_rate*100,1), '% \n')
+print("Errors training: ", error_matrix, '\n', error_count, '\n', round(error_rate*100,1), '% \n')
+
+error_matrix_test, error_count_test, error_rate_test = find_error_rate(g[0:], target_matrix_test)
+print("Errors test: ", error_matrix_test, '\n', error_count_test, '\n', round(error_rate_test*100,1), '% \n')
+
+
 # Confusion matrix
 
-def create_confusion_matrix(predictions, true_values, c):
+def create_confusion_matrix(W_matrix, x_vec, targets, c):
     """
-    Ikke ferdig, gir feil svar
+    Ikke ferdig
     Lager confusion matrix
-
+    c: antall klasser
     """
     confusion = np.zeros((c,c))
-    # Sammenlikn predictions og true values
-    rounded_pred = np.around(predictions)
-    rounded_targets = np.around(true_values)
-    # Lite effektiv for loop
-    for col in range(c):  # c = antall klasser
-        for row in range(rounded_pred[:,col].size):
-            if rounded_pred[row,col] == rounded_targets[row,col]:
-                confusion[col,col] += 1
+    pred = np.empty(x_vec.shape)
+
+    g_vec = np.zeros((C, num_testing_set))
+    g_vec = np.asmatrix(g_vec)
+    for k in range(num_testing_set):
+        gk = np.asmatrix(discriminant_vector(W_curr, test[k, :])).transpose()
+        print("g:", gk, "\n")
+        g[:, k] = gk
+    rounded_pred = matr_to_classes(g_vec)
+    rounded_targets = matr_to_classes(targets)  # For sikkerhets skyld
+    print(g_vec.shape)
+    #Sammenlikn
+    #for col in range(x_vec.size):
+        #if pred[col] == g_vec[col]:
+            #confusion[]
+
     return confusion
 
