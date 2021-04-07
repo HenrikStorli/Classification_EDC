@@ -110,11 +110,11 @@ def pred_to_class(pred):
     """
     "Runder av" vektor til nærmeste klasse
     """
-
+    print("pred ", pred, "stop")
     max_arg = np.argmax(pred)
     new_pred = np.zeros(pred.shape, dtype=int)
     new_pred[max_arg] = 1
-
+    print(max_arg)
     return new_pred
 
 #print("pred_to_class test: ", pred_to_class(np.array([0.5, 3, 0.1])))
@@ -132,12 +132,12 @@ def find_error_rate(W_matrix, t_matrix):
     error_rate:
     """
     rounded_W = np.empty(W_matrix.shape)
-    rounded_t = np.empty(W_matrix.shape)
-
+    rounded_t = np.empty(t_matrix.shape)
+    print("W_matrix shape: ", W_matrix.shape)
     for i in range(W_matrix[0].size):  # W_matrix[0].size = 90
-        rounded_W[i] = np.reshape(pred_to_class(W_matrix[i]),3)  # Runder av til nærmeste klasse
-        rounded_t[i] = np.reshape(pred_to_class(t_matrix[i]),3)
-        print("rounded_W[i]: ", rounded_W[i])
+        rounded_W[:,i] = np.reshape(pred_to_class(W_matrix[:,i]),3)  # Runder av til nærmeste klasse
+        rounded_t[:,i] = np.reshape(pred_to_class(t_matrix[:,i]),3)
+        print("rounded_W[:,i]: ", rounded_W[:,i])
         #  Gir indexerror
     print("rounded_W:", rounded_W)
     errs = np.absolute(np.subtract(rounded_W, rounded_t))  # Elementwise forskjell W og t
@@ -149,7 +149,7 @@ W_curr = W_init
 training, test = split()
 targer_matrix = init_target_matrix()
 num_testing_set, num_cols_testing = training.shape
-iters = 5000            # For plotting
+iters = 1000            # For plotting
 mses = [] # For plotting
 x_axis = np.arange(start=0, stop=iters, step=100)    # For plotting
 count = 0
@@ -220,4 +220,3 @@ def create_confusion_matrix(predictions, true_values, c):
                 confusion[col,col] += 1
     return confusion
 
-print(create_confusion_matrix(g, targer_matrix, 3))
