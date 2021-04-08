@@ -1,7 +1,6 @@
 from import_utilities import *
 
 
-
 def sigmoid(value):
     if -value > np.log(np.finfo(type(value)).max):
         return 0.0

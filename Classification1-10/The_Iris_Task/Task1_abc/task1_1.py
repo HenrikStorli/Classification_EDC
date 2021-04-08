@@ -1,4 +1,5 @@
 from classifier_utilities import *
+from plotting import *
 
 # Oppgave 1 (b)
 
@@ -59,3 +60,8 @@ print("Errors test: ", error_count_test, '\n', round(error_rate_test * 100, 1), 
 
 print("Confusion matrix for training set: \n", create_confusion_matrix(g, target_matrix))
 print("Confusion matrix for test set: \n", create_confusion_matrix(g_test, target_matrix_test))
+
+
+setosa_hist_plots()
+versicolor_hist_plots()
+virginica_hist_plots()

@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01d8855c-782e-4552-8604-22b06e3db736" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/classifier_utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/classifier_utilities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_utilities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task1_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/task1_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/The_Iris_Task/Task1_abc/plotting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/The_Iris_Task/Task1_abc/math_utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/The_Iris_Task/Task1_abc/math_utilities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/The_Iris_Task/Task1_abc/task1_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/The_Iris_Task/Task1_abc/task1_1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,42 +14,51 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/task1_1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classifier_utilities.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="77" column="40" lean-forward="true" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/math_utilities.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/import_utilities.py">
+        <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/task1_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="21" column="46" lean-forward="true" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+            <state relative-caret-position="187">
+              <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#0#34#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/plotting.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="71">
+              <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/math_utilities.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/import_utilities.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/classifier_utilities.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -62,6 +72,14 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\Users\Lokal\Documents\ELSYS\3V\EDK\prosjekt\Classification1_test\Classification1-10</dir>
+    </dirStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -72,11 +90,14 @@
         <option value="$PROJECT_DIR$/classifier_utilities.py" />
         <option value="$PROJECT_DIR$/task1_1.py" />
         <option value="$PROJECT_DIR$/import_utilities.py" />
+        <option value="$PROJECT_DIR$/The_Iris_Task/Task1_abc/math_utilities.py" />
+        <option value="$PROJECT_DIR$/The_Iris_Task/Task1_abc/task1_1.py" />
+        <option value="$PROJECT_DIR$/The_Iris_Task/Task1_abc/plotting.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-11" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="949" />
     <option name="width" value="980" />
     <option name="height" value="1091" />
   </component>
@@ -92,6 +113,28 @@
             <path>
               <item name="Classification1-10" type="b2602c69:ProjectViewProjectNode" />
               <item name="Classification1-10" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Classification1-10" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Classification1-10" type="462c0819:PsiDirectoryNode" />
+              <item name="class_iris" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Classification1-10" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Classification1-10" type="462c0819:PsiDirectoryNode" />
+              <item name="The_Iris_Task" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Classification1-10" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Classification1-10" type="462c0819:PsiDirectoryNode" />
+              <item name="The_Iris_Task" type="462c0819:PsiDirectoryNode" />
+              <item name="Task1_abc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Classification1-10" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Classification1-10" type="462c0819:PsiDirectoryNode" />
+              <item name="The_Iris_Task" type="462c0819:PsiDirectoryNode" />
+              <item name="Task1_d" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -115,8 +158,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="task1_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.task1_1">
+    <configuration name="classifier_utilities" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Classification1-10" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -124,11 +167,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The_Iris_Task/Task1_abc" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/task1_1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The_Iris_Task/Task1_abc/classifier_utilities.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -137,9 +180,81 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="import_utilities" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Classification1-10" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The_Iris_Task/Task1_abc" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The_Iris_Task/Task1_abc/import_utilities.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="math_utilities" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Classification1-10" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The_Iris_Task/Task1_abc" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The_Iris_Task/Task1_abc/math_utilities.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="task1_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Classification1-10" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The_Iris_Task/Task1_abc" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The_Iris_Task/Task1_abc/task1_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.task1_1" />
+      <item itemvalue="Python.math_utilities" />
+      <item itemvalue="Python.classifier_utilities" />
+      <item itemvalue="Python.import_utilities" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.task1_1" />
+        <item itemvalue="Python.import_utilities" />
+        <item itemvalue="Python.classifier_utilities" />
+        <item itemvalue="Python.math_utilities" />
       </list>
     </recent_temporary>
   </component>
@@ -169,53 +284,67 @@
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.023828436" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1683876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.64261746" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39765102" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47019866" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39765102" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3294702" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3294702" />
       <window_info anchor="bottom" id="Python Console" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50039715" side_tool="true" weight="0.6423841" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/task1_1.py">
+    <entry file="file://$PROJECT_DIR$/math_utilities.py" />
+    <entry file="file://$PROJECT_DIR$/import_utilities.py" />
+    <entry file="file://$PROJECT_DIR$/task1_1.py" />
+    <entry file="file://$PROJECT_DIR$/classifier_utilities.py" />
+    <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_d/task1_1e.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/math_utilities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classifier_utilities.py">
+    <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/classifier_utilities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="77" column="40" lean-forward="true" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/math_utilities.py">
+    <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/import_utilities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        <state relative-caret-position="51">
+          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/import_utilities.py">
+    <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/plotting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="21" column="46" lean-forward="true" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+        <state relative-caret-position="71">
+          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/task1_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
