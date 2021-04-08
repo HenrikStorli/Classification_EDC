@@ -38,14 +38,14 @@ W_init = np.ones((C,D)) # Initialiserer CxD- matrise med bare 0
 def split():
 
     # "Stabler" x- vektorene oppå hverandre
-    training = np.vstack((setosa[0:training_1b,:],
-                          versicolor[0:training_1b,:],
-                          virginica[0:training_1b,:],
+    training = np.vstack((setosa[20:-1,:],
+                          versicolor[20:-1,:],
+                          virginica[20:-1,:],
                           ))
 
-    test = np.vstack((setosa[training_1b:,:],
-                      versicolor[training_1b:,:],
-                      virginica[training_1b:,:],
+    test = np.vstack((setosa[0:19,:],
+                      versicolor[0:19,:],
+                      virginica[0:19,:],
                       ))
     training_ones = np.ones(training.shape[0])
     test_ones = np.ones(test.shape[0])

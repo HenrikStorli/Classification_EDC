@@ -1,4 +1,4 @@
-from classifier_utilities import *
+from classifier_utilities_1d import *
 
 # Oppgave 1 (b)
 
