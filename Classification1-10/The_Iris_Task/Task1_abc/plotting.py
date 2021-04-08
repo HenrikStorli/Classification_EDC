@@ -7,25 +7,25 @@ def setosa_hist_plots():
     plt.title("Sepal length")
     plt.xlabel("Length [cm]")
     plt.ylabel("Samples")
-    plt.hist(setosa[:,0], bins=10)
+    plt.hist(setosa[:,0], bins=10, color='red')
 
     plt.subplot(2,2,2)
     plt.title("Sepal width")
     plt.xlabel("Width [cm]")
     plt.ylabel("Samples")
-    plt.hist(setosa[:,1], bins=10)
+    plt.hist(setosa[:,1], bins=10, color='blue')
 
     plt.subplot(2,2,3)
     plt.title("Petal length")
     plt.xlabel("Length [cm]")
     plt.ylabel("Samples")
-    plt.hist(setosa[:,2], bins=10)
+    plt.hist(setosa[:,2], bins=10, color='green')
 
     plt.subplot(2,2,4)
     plt.title("Petal width")
     plt.xlabel("Width [cm]")
     plt.ylabel("Samples")
-    plt.hist(setosa[:,3], bins=10)
+    plt.hist(setosa[:,3], bins=10, color='orange')
 
     plt.subplots_adjust(hspace=0.5)
 
@@ -38,25 +38,25 @@ def versicolor_hist_plots():
     plt.title("Sepal length")
     plt.xlabel("Length [cm]")
     plt.ylabel("Samples")
-    plt.hist(versicolor[:,0], bins=10)
+    plt.hist(versicolor[:,0], bins=10, color='red')
 
     plt.subplot(2,2,2)
     plt.title("Sepal width")
     plt.xlabel("Width [cm]")
     plt.ylabel("Samples")
-    plt.hist(versicolor[:,1], bins=10)
+    plt.hist(versicolor[:,1], bins=10, color='blue')
 
     plt.subplot(2,2,3)
     plt.title("Petal length")
     plt.xlabel("Length [cm]")
     plt.ylabel("Samples")
-    plt.hist(versicolor[:,2], bins=10)
+    plt.hist(versicolor[:,2], bins=10, color='green')
 
     plt.subplot(2,2,4)
     plt.title("Petal width")
     plt.xlabel("Width [cm]")
     plt.ylabel("Samples")
-    plt.hist(versicolor[:,3], bins=10)
+    plt.hist(versicolor[:,3], bins=10, color='orange')
 
     plt.subplots_adjust(hspace=0.5)
 
@@ -70,25 +70,25 @@ def virginica_hist_plots():
     plt.title("Sepal length")
     plt.xlabel("Length [cm]")
     plt.ylabel("Samples")
-    plt.hist(virginica[:,0], bins=10)
+    plt.hist(virginica[:,0], bins=10, color='red')
 
     plt.subplot(2,2,2)
     plt.title("Sepal width")
     plt.xlabel("Width [cm]")
     plt.ylabel("Samples")
-    plt.hist(virginica[:,1], bins=10)
+    plt.hist(virginica[:,1], bins=10, color='blue')
 
     plt.subplot(2,2,3)
     plt.title("Petal length")
     plt.xlabel("Length [cm]")
     plt.ylabel("Samples")
-    plt.hist(virginica[:,2], bins=10)
+    plt.hist(virginica[:,2], bins=10, color='green')
 
     plt.subplot(2,2,4)
     plt.title("Petal width")
     plt.xlabel("Width [cm]")
     plt.ylabel("Samples")
-    plt.hist(virginica[:,3], bins=10)
+    plt.hist(virginica[:,3], bins=10, color='orange')
 
     plt.subplots_adjust(hspace=0.5)
 
