@@ -3,10 +3,13 @@ from classifier_utilities import *
 # Oppgave 1 (b)
 
 
+<<<<<<< Updated upstream
 
 print(init_target_matrix(training_1b))
 
 
+=======
+>>>>>>> Stashed changes
 W_curr = W_init
 training, test = split()
 targer_matrix = init_target_matrix(training_1b)
@@ -67,16 +70,29 @@ plt.show()
 
 
 target_matrix_test = init_target_matrix(test_1b)
-print("Test targets: ", target_matrix_test)
 
+<<<<<<< Updated upstream
 error_matrix, error_count, error_rate = find_error_rate(g, targer_matrix)
 print("Errors training: ", error_matrix, '\n', error_count, '\n', round(error_rate*100,1), '% \n')
 
 error_matrix_test, error_count_test, error_rate_test = find_error_rate(g[0:], target_matrix_test)
 print("Errors test: ", error_matrix_test, '\n', error_count_test, '\n', round(error_rate_test*100,1), '% \n')
 
+=======
+g_test = full_g_matrix(W_curr, test)
+error_count, error_rate = find_error_rate(g, target_matrix)
+print("Error training: ", error_count, '\n', round(error_rate * 100, 1), '% \n')
+
+error_count_test, error_rate_test = find_error_rate(g_test, target_matrix_test)
+print("Errors test: ", error_count_test, '\n', round(error_rate_test * 100, 1), '% \n')
+>>>>>>> Stashed changes
 
 # Confusion matrix
 
 
+<<<<<<< Updated upstream
 
+=======
+print("Confusion matrix for training set: \n", create_confusion_matrix(g, target_matrix))
+print("Confusion matrix for test set: \n", create_confusion_matrix(g_test, target_matrix_test))
+>>>>>>> Stashed changes

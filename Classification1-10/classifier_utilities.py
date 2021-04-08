@@ -19,11 +19,9 @@ def pred_to_class(pred):
     "Runder av" vektor til nærmeste klasse
     Placeholder
     """
-    print("pred ", pred, "stop")
     max_arg = np.argmax(pred)
     new_pred = np.zeros(pred.shape, dtype=int)
     new_pred[max_arg] = 1
-    print(max_arg)
     return new_pred
 
 def matr_to_classes(matr):
@@ -48,36 +46,27 @@ def find_error_rate(g_matrix, t_matrix):
     err_num: antall forskjeller
     error_rate:
     """
-    length = g_matrix[0].size
+    err_num = 0
     rounded_g = matr_to_classes(g_matrix)
-    rounded_t = matr_to_classes(t_matrix)
-    print("rounded_g:", rounded_g)
-    errs = np.absolute(np.subtract(rounded_g[0:length], rounded_t))  # Elementwise forskjell W og t
-    err_num = np.count_nonzero(errs)
+    print(rounded_g.dtype)
+    print(t_matrix.dtype)
+    for n in range(rounded_g[0].size):
+        if np.array_equal(rounded_g[:,n], t_matrix[:,n]) is False:
+            err_num += 1
     error_rate = err_num/g_matrix.size
-    return errs, err_num, error_rate
+    return err_num, error_rate
 
-def create_confusion_matrix(W_matrix, x_vec, targets, c):
+def create_confusion_matrix(g_matrix, targets):
     """
-    Ikke ferdig
     Lager confusion matrix
     c: antall klasser
     """
-    confusion = np.zeros((c,c))
-    pred = np.empty(x_vec.shape)
-    num_testing_set, cols_testing_set = x_vec.size
-    g_vec = np.zeros((C, num_testing_set))
-    g_vec = np.asmatrix(g_vec)
-    for k in range(num_testing_set):
-        gk = np.asmatrix(discriminant_vector(W_matrix, x_vec[k, :])).transpose()
-        print("g:", gk, "\n")
-        g_vec[:, k] = gk
-    rounded_pred = matr_to_classes(g_vec)
-    rounded_targets = matr_to_classes(targets)  # For sikkerhets skyld
-    print(g_vec.shape)
-    #Sammenlikn
-    #for col in range(x_vec.size):
-        #if pred[col] == g_vec[col]:
-            #confusion[]
+    number_of_classes, number_of_samples = g_matrix.shape
+    confusion = np.zeros((number_of_classes,number_of_classes))
+    rounded_g = matr_to_classes(g_matrix)
+
+    for col in range(number_of_samples):
+        # For hver kolonne i g_matrix, sammenlikn med targets og legg til på indeks (klasse g, klasse t) i confusion matrix
+        confusion[np.argmax(targets[:,col]),np.argmax(g_matrix[:,col])] += 1
 
     return confusion

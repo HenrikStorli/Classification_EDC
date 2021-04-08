@@ -54,5 +54,3 @@ def split():
     test = np.append(test,test_ones.reshape(-1,1), axis=1)
     return training, test
 
-print("Training: ", split()[0])
-print("Test: ", split()[1])
