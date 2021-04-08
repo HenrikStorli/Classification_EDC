@@ -24,7 +24,7 @@ def MSE(target_matrix, g):
         tk = np.asmatrix(target_matrix[:,k])
         tk = tk.transpose()
         mse_value += 0.5 * (gk - tk).transpose() * (gk - tk)
-    return mse_value
+    return mse_value[-1,-1]
 
 def grad_MSE(target_matrix, g, samples):
     mse_grad = np.zeros((C, D))
