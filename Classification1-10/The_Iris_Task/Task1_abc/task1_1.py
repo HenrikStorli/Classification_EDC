@@ -1,6 +1,7 @@
 from classifier_utilities import *
 from plotting import *
 
+
 # Oppgave 1 (b)
 
 
@@ -65,3 +66,5 @@ print("Confusion matrix for test set: \n", create_confusion_matrix(g_test, targe
 setosa_hist_plots()
 versicolor_hist_plots()
 virginica_hist_plots()
+
+print("Feature with lowest average t- value: \t", most_overlapping_feature()[0])
