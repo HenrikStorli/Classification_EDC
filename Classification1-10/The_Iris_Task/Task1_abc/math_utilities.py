@@ -1,4 +1,37 @@
 from import_utilities import *
+import scipy.stats as stats
+
+def t_test(feature):
+    """
+    Calculates average of t statistics and p values for
+    given feature for all iris classes
+    Large t- value -> large difference between 2 sets
+    :param feature: index of feature to be compared
+    :return: p value
+    """
+    t_set_versi, p_set_versi  = stats.ttest_ind(setosa[:,feature], versicolor[:,feature])
+    t_set_virg, p_set_virg  = stats.ttest_ind(setosa[:,feature], virginica[:,feature])
+    t_versi_virg, p_versi_virg = stats.ttest_ind(versicolor[:,feature], virginica[:,feature])
+
+    t_avg = np.average([t_set_versi, t_set_virg, t_versi_virg])
+    p_avg = np.average([p_set_versi, p_set_virg, p_versi_virg])
+
+    return t_avg, p_avg
+
+
+def most_overlapping_feature():
+    """
+    Compare average t and p values
+    """
+    t_averages = []
+    p_averages = []
+    for i in range(num_features):
+        t_averages.append(t_test(i)[0])
+        p_averages.append(t_test(i)[1])
+    t_min_index = np.argmin(np.abs(t_averages))
+    p_min_index = np.argmin(np.abs(p_averages))
+
+    return t_min_index, p_min_index
 
 
 def sigmoid(value):

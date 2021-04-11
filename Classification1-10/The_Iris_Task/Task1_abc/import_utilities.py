@@ -14,7 +14,8 @@ labeled_set[:,0:3] = labeled_set[:,0:3].astype('float_')
 
 
 C = 3       # Antall klasser
-D = 5       # Antall features + 1, se figur i kompendium
+num_features = 4
+D = num_features + 1  # Antall features + 1, se figur i kompendium
 training_1b = 30    # Antall training
 test_1b = 20        # Antall test
 alpha = 0.002           # Prøv ut flere alphaer
