@@ -27,11 +27,6 @@ classes = np.matrix('1 0 0; 0 1 0; 0 0 1')
     #[0, 1, 0],  # versicolor
     #[0, 0, 1]  # virginica
 
-W_init = np.ones((C,D)) # Initialiserer CxD- matrise med bare 0
-#W_init[0][0] = 3
-#W_init[1][1] = 0.2
-#W_init[2][2] = 7
-
 #print(setosa)
 #print(setosa.dtype)
 

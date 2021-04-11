@@ -1,12 +1,10 @@
 from classifier_utilities import *
 from plotting import *
 
-
-# Oppgave 1 (b)
-
+training, test = split()
 def train_test():
-    W_curr = W_init
-    training, test = split()
+    W_curr = np.ones((C,D))
+
     target_matrix = init_target_matrix(training_1b)
     num_training_set, num_cols_training = training.shape
     g = np.zeros((C, num_training_set))
@@ -18,7 +16,7 @@ def train_test():
     count = 0
     while count < iters:
         g = full_g_matrix(W_curr, training)
-        mse_grad = grad_MSE(target_matrix, g, training)
+        mse_grad = grad_MSE(D, target_matrix, g, training)
         W_curr -= alpha * mse_grad
 
         mse_value = MSE(target_matrix, g)
@@ -27,9 +25,10 @@ def train_test():
             mses.append(mse_value)
         count += 1
 
+    mse_value = MSE(target_matrix, g)
+    print("MSE = \t", mse_value, "\n")
     # Calculate value of g
     g = full_g_matrix(W_curr, training)
-    print(g)
 
     # print("g:", gk,"\n")
 
@@ -42,6 +41,7 @@ def train_test():
     plt.plot(x_axis, mses)
     plt.xlabel("Iterasjoner")
     plt.ylabel("Mean square error")
+    plt.grid(True)
     plt.show()
 
     # Oppgave 1c)
@@ -77,6 +77,9 @@ setosa = np.delete(setosa, most_overlapping_feature()[0], 1)
 versicolor = np.delete(versicolor, most_overlapping_feature()[0], 1)
 virginica = np.delete(virginica, most_overlapping_feature()[0], 1)
 
+training = np.delete(training, most_overlapping_feature()[0],1)
+test = np.delete(test, most_overlapping_feature()[0],1)
+D -= 1
 train_test()
 print("Feature with lowest average t- value: \t", most_overlapping_feature()[0])
 print("Removed feature with lowest t- value: \n")
@@ -86,6 +89,9 @@ setosa = np.delete(setosa, most_overlapping_feature()[0], 1)
 versicolor = np.delete(versicolor, most_overlapping_feature()[0], 1)
 virginica = np.delete(virginica, most_overlapping_feature()[0], 1)
 
+training = np.delete(training, most_overlapping_feature()[0],1)
+test = np.delete(test, most_overlapping_feature()[0],1)
+D -= 1
 train_test()
 print("Feature with lowest average t- value: \t", most_overlapping_feature()[0])
 print("Removed feature with lowest t- value: \n")
@@ -96,3 +102,7 @@ setosa = np.delete(setosa, most_overlapping_feature()[0], 1)
 versicolor = np.delete(versicolor, most_overlapping_feature()[0], 1)
 virginica = np.delete(virginica, most_overlapping_feature()[0], 1)
 
+training = np.delete(training, most_overlapping_feature()[0],1)
+test = np.delete(test, most_overlapping_feature()[0],1)
+D -= 1
+train_test()

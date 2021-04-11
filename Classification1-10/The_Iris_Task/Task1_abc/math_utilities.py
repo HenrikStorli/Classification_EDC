@@ -58,8 +58,8 @@ def MSE(target_matrix, g):
         mse_value += 0.5 * (gk - tk).transpose() * (gk - tk)
     return mse_value[-1,-1]
 
-def grad_MSE(target_matrix, g, samples):
-    mse_grad = np.zeros((C, D))
+def grad_MSE(D_grad, target_matrix, g, samples):
+    mse_grad = np.zeros((C, D_grad))
     number_of_samples, single_sample_size  = samples.shape
     for k in range(number_of_samples):
         g_k = np.asmatrix(g[:,k])
