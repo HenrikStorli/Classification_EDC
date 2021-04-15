@@ -23,3 +23,49 @@ def NN_classifier(test_set, training_set, class_vector_training_set):
 
 def euclidian_distance(x,y):
     return np.multiply((x-y),np.transpose(x-y))
+
+def import_data(path):
+    """
+    Import datasets from .bin files
+    returns ndarray
+    """
+
+    with open(path, 'r') as fid:
+        dt = np.dtype('>i4')
+        magic_num = np.fromfile(fid, dtype=dt, count=1)[-1]
+        num_test = np.fromfile(fid, dtype=dt, count=1)[-1]
+        row_size = np.fromfile(fid, dtype=dt, count=1)[-1]
+        col_size = np.fromfile(fid, dtype=dt, count=1)[-1]
+        data = np.zeros((num_test, row_size*col_size))
+
+        for i in range(int(num_test)):        #Kun for test
+            for j in range(row_size*col_size):
+                data[i,j] = np.fromfile(fid, dtype=np.uint8, count=1)
+        return data
+
+def import_labels(path):
+    """
+    Import labels from .bin files
+    returns ndarray
+    """
+
+    with open(path, 'r') as fid:
+        dt = np.dtype('>i4')
+        magic_num = np.fromfile(fid, dtype=dt, count=1)[-1]
+        num = np.fromfile(fid, dtype=dt, count=1)[-1]
+        data = np.zeros((num,1))
+        for i in range(int(num)):        #
+            data[i] = np.fromfile(fid, dtype=np.uint8, count=1)
+        return data
+
+def import_all():
+    """Returns datasets and labels"""
+
+    test_images = import_data('.\\data\\test_images.bin')
+    test_labels = import_labels('.\\data\\test_labels.bin')
+    train_images = import_data('.\\data\\train_images.bin')
+    train_labels = import_labels('.\\data\\train_labels.bin')
+
+    return test_images, test_labels, train_images, train_labels
+
+import_all()

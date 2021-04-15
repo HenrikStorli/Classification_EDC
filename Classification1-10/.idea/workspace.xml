@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="01d8855c-782e-4552-8604-22b06e3db736" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/The_Iris_Task/Task1_abc/plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/The_Iris_Task/Task1_abc/plotting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/The_Iris_Task/Task1_abc/task1_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/The_Iris_Task/Task1_abc/task1_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handwritten_Numbers/Task1/classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/Handwritten_Numbers/Task1/classifier.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,56 +13,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/task1_1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/math_utilities.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-706">
-              <caret line="7" column="53" lean-forward="true" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/import_utilities.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-247">
-              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/classifier_utilities.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/plotting.py">
+        <entry file="file://$PROJECT_DIR$/Handwritten_Numbers/Task1/classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="44" column="24" lean-forward="true" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+            <state relative-caret-position="110">
+              <caret line="65" column="42" selection-start-line="65" selection-start-column="42" selection-end-line="65" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -99,13 +62,14 @@
         <option value="$PROJECT_DIR$/The_Iris_Task/Task1_abc/math_utilities.py" />
         <option value="$PROJECT_DIR$/The_Iris_Task/Task1_abc/task1_1.py" />
         <option value="$PROJECT_DIR$/The_Iris_Task/Task1_abc/plotting.py" />
+        <option value="$PROJECT_DIR$/Handwritten_Numbers/Task1/classifier.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="948" />
-    <option name="width" value="981" />
-    <option name="height" value="1092" />
+    <option name="x" value="949" />
+    <option name="width" value="980" />
+    <option name="height" value="1091" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -123,24 +87,13 @@
             <path>
               <item name="Classification1-10" type="b2602c69:ProjectViewProjectNode" />
               <item name="Classification1-10" type="462c0819:PsiDirectoryNode" />
-              <item name="class_iris" type="462c0819:PsiDirectoryNode" />
+              <item name="Handwritten_Numbers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Classification1-10" type="b2602c69:ProjectViewProjectNode" />
               <item name="Classification1-10" type="462c0819:PsiDirectoryNode" />
-              <item name="The_Iris_Task" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Classification1-10" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Classification1-10" type="462c0819:PsiDirectoryNode" />
-              <item name="The_Iris_Task" type="462c0819:PsiDirectoryNode" />
-              <item name="Task1_abc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Classification1-10" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Classification1-10" type="462c0819:PsiDirectoryNode" />
-              <item name="The_Iris_Task" type="462c0819:PsiDirectoryNode" />
-              <item name="Task1_d" type="462c0819:PsiDirectoryNode" />
+              <item name="Handwritten_Numbers" type="462c0819:PsiDirectoryNode" />
+              <item name="Task1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -164,7 +117,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.task1_1">
+  <component name="RunManager" selected="Python.classifier">
+    <configuration name="classifier" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Classification1-10" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Handwritten_Numbers/Task1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Handwritten_Numbers/Task1/classifier.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="classifier_utilities" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Classification1-10" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -254,9 +228,11 @@
       <item itemvalue="Python.math_utilities" />
       <item itemvalue="Python.classifier_utilities" />
       <item itemvalue="Python.import_utilities" />
+      <item itemvalue="Python.classifier" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.classifier" />
         <item itemvalue="Python.task1_1" />
         <item itemvalue="Python.import_utilities" />
         <item itemvalue="Python.classifier_utilities" />
@@ -287,16 +263,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="632" y="0" width="654" height="728" extended-state="0" />
+    <frame x="633" y="0" width="653" height="727" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.048543688" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.048622366" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.46901172" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39765102" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4748322" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39765102" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3294702" />
@@ -309,14 +285,33 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Handwritten_Numbers/Task1/classifier.py</url>
+          <line>70</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Handwritten_Numbers/Task1/classifier.py</url>
+          <line>68</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="fid._finalizing" />
+      </configuration>
+    </watches-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/math_utilities.py" />
     <entry file="file://$PROJECT_DIR$/import_utilities.py" />
     <entry file="file://$PROJECT_DIR$/task1_1.py" />
     <entry file="file://$PROJECT_DIR$/classifier_utilities.py" />
-    <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_d/task1_1e.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_d/task1_1e.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38-32/Lib/site-packages/numpy/core/_methods.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -331,16 +326,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+    <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/task1_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="1649">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/math_utilities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/import_utilities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-247">
+        <state relative-caret-position="204">
           <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -355,30 +363,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/math_utilities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-706">
-          <caret line="7" column="53" lean-forward="true" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/task1_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/The_Iris_Task/Task1_abc/plotting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="44" column="24" lean-forward="true" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        <state relative-caret-position="297">
+          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handwritten_Numbers/Task1/main_task1.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../Sensorer/Lab/TTT4280_lab/lab2/akustikklab/akustikklab.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../Sensorer/Lab/TTT4280_lab/lab2/akustikklab/akustikkfunksjoner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="30" selection-start-line="6" selection-end-line="17" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handwritten_Numbers/Task1/classifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="65" column="42" selection-start-line="65" selection-start-column="42" selection-end-line="65" selection-end-column="42" />
         </state>
       </provider>
     </entry>
