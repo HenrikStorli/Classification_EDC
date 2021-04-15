@@ -1,71 +1,69 @@
 import numpy as np
 
-def NN_classifier(test_set, training_set, class_vector_training_set):
 
+def NN_classifier(test_set, training_set, class_vector_training_set):
     num_rows_training, num_cols_training = training_set.shape
     num_rows_test, num_cols_test = test_set.shape
 
-    distance_matrix = np.zeros((num_rows_test,num_rows_training))
+    distance_matrix = np.zeros((num_rows_test, num_rows_training))
 
     for i in range(num_rows_test):
         for j in range(num_rows_training):
-            distance_matrix[i,j] = euclidian_distance(test_set[i,:], training_set[j,:])
+            D_i_j = distance_matrix[i, j]
+            te_Set = test_set[i, :]
+            tr_set = training_set[j, :]
+            ec_dist = euclidian_distance(te_Set, tr_set)
+            distance_matrix[i, j] = ec_dist
 
-    class_vector_guess = np.zeros((num_rows_test,1))
-
+    class_vector_guess = np.zeros((num_rows_test, 1))
 
     for k in range(num_rows_test):
-        min_index = np.argmin(np.abs(distance_matrix[k,:]))
+        min_index = np.argmin(np.abs(distance_matrix[k, :]))
         class_vector_guess[k] = class_vector_training_set[min_index]
 
     return class_vector_guess
 
 
-def euclidian_distance(x,y):
-    return np.multiply((x-y),np.transpose(x-y))
+def euclidian_distance(x, y):
+    x = np.asmatrix(x)
+    y = np.asmatrix(y)
 
-def import_data(path):
+    diff_x_y = x - y
+
+    diff_x_y_transpose = diff_x_y.transpose()
+
+    d = diff_x_y.dot(diff_x_y_transpose)
+
+    return d[-1][-1]
+
+
+def confusion_matrix(guessed_class_vector, true_class_vector, number_of_classes):
     """
-    Import datasets from .bin files
-    returns ndarray
-    """
-
-    with open(path, 'r') as fid:
-        dt = np.dtype('>i4')
-        magic_num = np.fromfile(fid, dtype=dt, count=1)[-1]
-        num_test = np.fromfile(fid, dtype=dt, count=1)[-1]
-        row_size = np.fromfile(fid, dtype=dt, count=1)[-1]
-        col_size = np.fromfile(fid, dtype=dt, count=1)[-1]
-        data = np.zeros((num_test, row_size*col_size))
-
-        for i in range(int(num_test)):        #Kun for test
-            for j in range(row_size*col_size):
-                data[i,j] = np.fromfile(fid, dtype=np.uint8, count=1)
-        return data
-
-def import_labels(path):
-    """
-    Import labels from .bin files
-    returns ndarray
+    Lager confusion matrix
+    c: antall klasser
     """
 
-    with open(path, 'r') as fid:
-        dt = np.dtype('>i4')
-        magic_num = np.fromfile(fid, dtype=dt, count=1)[-1]
-        num = np.fromfile(fid, dtype=dt, count=1)[-1]
-        data = np.zeros((num,1))
-        for i in range(int(num)):        #
-            data[i] = np.fromfile(fid, dtype=np.uint8, count=1)
-        return data
+    number_of_samples, cols = guessed_class_vector.shape
+    confusion = np.zeros((number_of_classes, number_of_classes))
 
-def import_all():
-    """Returns datasets and labels"""
+    for n in range(number_of_samples):
+        true_idx = true_class_vector[n, 0]
+        guess_idx = guessed_class_vector[n, 0]
 
-    test_images = import_data('.\\data\\test_images.bin')
-    test_labels = import_labels('.\\data\\test_labels.bin')
-    train_images = import_data('.\\data\\train_images.bin')
-    train_labels = import_labels('.\\data\\train_labels.bin')
+        confusion[int(true_idx), int(guess_idx)] += 1
 
-    return test_images, test_labels, train_images, train_labels
+    return confusion
 
-import_all()
+
+def error_rate(guessed_class_vector, true_class_vector):
+    number_of_samples, cols = guessed_class_vector.shape
+    error_count = 0
+    for n in range(number_of_samples):
+        true_idx = true_class_vector[n, 0]
+        guess_idx = guessed_class_vector[n, 0]
+
+        if true_idx != guess_idx:
+            error_count += 1
+
+    error_rate = error_count / number_of_samples
+    return error_rate
