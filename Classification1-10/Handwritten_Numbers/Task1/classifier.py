@@ -67,3 +67,30 @@ def error_rate(guessed_class_vector, true_class_vector):
 
     error_rate = error_count / number_of_samples
     return error_rate
+
+def find_misclassified_indexes(guessed_class_vector, test_labels):
+    number_of_samples, cols = guessed_class_vector.shape
+
+    misclassified_indexes = np.array([])
+
+    for n in range(number_of_samples):
+        if guessed_class_vector[n, 0] != test_labels[n, 0]:
+
+            misclassified_indexes = np.append(misclassified_indexes, n)
+
+    return misclassified_indexes
+
+
+
+
+def find_correct_classified_indexes(guessed_class_vector, test_labels):
+    number_of_samples, cols = guessed_class_vector.shape
+
+    correctly_classified_indexes = np.array([])
+
+    for n in range(number_of_samples):
+        if guessed_class_vector[n, 0] == test_labels[n, 0]:
+
+            correctly_classified_indexes = np.append(correctly_classified_indexes,n)
+
+    return correctly_classified_indexes
