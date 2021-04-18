@@ -1,5 +1,5 @@
 import numpy as np
-from scipy import io.savemat
+from scipy import io as io
 
 def import_data(path):
     """
@@ -107,6 +107,7 @@ def import_data_subset_to_file(path, n):
         for i in range(n):        #Kun for test
             for j in range(row_size*col_size):
                 data[i,j] = np.fromfile(fid, dtype=np.uint8, count=1)
+
         return data
 
 def import_labels_subset_to_file(path,n):
@@ -122,7 +123,10 @@ def import_labels_subset_to_file(path,n):
         data = np.zeros((n,1))
         for i in range(n):        #
             data[i] = np.fromfile(fid, dtype=np.uint8, count=1)
+
         return data
+
+
 
 def import_all_subset_to_file(n):
     """Returns datasets and labels"""
@@ -132,6 +136,10 @@ def import_all_subset_to_file(n):
     train_images = import_data_subset('.\\data\\train_images.bin',n)
     train_labels = import_labels_subset('.\\data\\train_labels.bin',n)
 
-    scipy.io.savemat(,)
-
-    return test_images, test_labels, train_images, train_labels
+    data_dict = {
+        'test_images': test_images,
+        'test_labels': test_labels,
+        'train_images': train_images,
+        'train_labels': train_labels,
+    }
+    io.savemat('.\\mat_files\\MNIST.mat', data_dict)
