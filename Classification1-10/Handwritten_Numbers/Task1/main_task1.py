@@ -1,6 +1,9 @@
 from classifier import *
 from import_utilities import *
+from clustering import *
+
 import matplotlib.pyplot as plt
+
 
 # Import data from file
     # matrix: Full training set
@@ -18,6 +21,7 @@ train_images, \
 train_labels \
     = import_all_subset(subset_size)
 
+sorted_images = sort_training_images_into_classes(train_images, train_labels)
 
 # Classify
 guessed_class_vector = NN_classifier(test_images, train_images, train_labels)
