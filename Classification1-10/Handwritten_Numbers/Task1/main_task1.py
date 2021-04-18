@@ -37,7 +37,7 @@ print("Errors test: ", error_rate_test_set, '\n', round(error_rate_test_set * 10
 
 # Find some of the misclassified pictures
 misclassified_indexes = find_misclassified_indexes(guessed_class_vector, test_labels)
-wrong_pic_idx = int(misclassified_indexes[0])
+wrong_pic_idx = int(misclassified_indexes[1])
 wrongly_classified_pic = np.reshape(test_images[wrong_pic_idx,:],(28,28))
 
 # Plot some of the misclassified pictures
