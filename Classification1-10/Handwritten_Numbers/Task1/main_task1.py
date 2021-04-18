@@ -15,13 +15,12 @@ import matplotlib.pyplot as plt
 subset_size = 100
 
 # Read values into variables
-test_images, \
-test_labels, \
-train_images, \
-train_labels \
-    = import_all_subset(subset_size)
+import_all_subset_to_file(subset_size)
 
 sorted_images = sort_training_images_into_classes(train_images, train_labels)
+
+mnist = io.loadmat('.\\mat_files\\MNIST.mat')
+
 
 # Classify
 guessed_class_vector = NN_classifier(test_images, train_images, train_labels)

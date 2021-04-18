@@ -94,3 +94,4 @@ def find_correct_classified_indexes(guessed_class_vector, test_labels):
             correctly_classified_indexes = np.append(correctly_classified_indexes,n)
 
     return correctly_classified_indexes
+
